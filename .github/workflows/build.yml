@@ -2,6 +2,7 @@ name: Build
 
 on:
   push:
+  workflow_dispatch:
   repository_dispatch:
     types: [run_build]
 
@@ -21,7 +22,7 @@ jobs:
     - name: Clone
       run: |
         export REV=dirty-$(git describe --always)
-        git clone https://github.com/vitasdk/buildscripts.git
+        git clone https://github.com/vitasdk-soft/buildscripts.git
         chmod +x *.sh 
     - name: Build
       run: |
@@ -58,7 +59,7 @@ jobs:
     - name: Clone
       run: |
         export REV=dirty-$(git describe --always)
-        git clone https://github.com/vitasdk/buildscripts.git
+        git clone https://github.com/vitasdk-soft/buildscripts.git
         chmod +x *.sh 
     - name: Build
       run: |
@@ -99,7 +100,7 @@ jobs:
     - name: Clone
       run: |
         export REV=dirty-$(git describe --always)
-        git clone https://github.com/vitasdk/buildscripts.git
+        git clone https://github.com/vitasdk-soft/buildscripts.git
         chmod +x *.sh 
     - name: Build
       run: |
