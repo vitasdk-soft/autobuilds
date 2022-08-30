@@ -39,7 +39,7 @@ jobs:
       with:
         name: vitasdk-linux
         path: buildscripts/build/*.tar.bz2
-    - uses: svenstaro/upload-release-action@v2
+    - uses: v-atamanenko/upload-release-action-w-retries@v3
       if: contains(github.ref,'refs/heads/master')
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -76,7 +76,7 @@ jobs:
       with:
         name: vitasdk-macos
         path: buildscripts/build/*.tar.bz2
-    - uses: svenstaro/upload-release-action@v2
+    - uses: v-atamanenko/upload-release-action-w-retries@v3
       if: contains(github.ref,'refs/heads/master')
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -119,7 +119,7 @@ jobs:
       with:
         name: vitasdk-windows
         path: buildscripts/build/*.tar.bz2
-    - uses: svenstaro/upload-release-action@v2
+    - uses: v-atamanenko/upload-release-action-w-retries@v3
       if: contains(github.ref,'refs/heads/master')
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
